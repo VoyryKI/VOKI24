@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решения задач по определителям</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Arial', sans-serif;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .answer {
+            color: #0a7e07;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        /* For Math Equations */
+        .math-container {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .math-equation {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <!-- Icons from Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- MathJax for LaTeX support -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fas fa-calculator icon"></i> Решения задач по определителям</h1>
+
+    <div class="section">
+        <h2><i class="fas fa-square-root-alt icon"></i> Задача 1. Вычислить определители</h2>
+
+        <h3>Пример 1:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & 1 \\ -1 & 3 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 1 \times 3 - 1 \times (-1) = 3 + 1 = 4 $$
+        </div>
+        <p class="answer">Ответ: \( 4 \).</p>
+
+        <h3>Пример 2:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 2 & 3 \\ 1 & 7 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 2 \times 7 - 3 \times 1 = 14 - 3 = 11 $$
+        </div>
+        <p class="answer">Ответ: \( 11 \).</p>
+
+        <h3>Пример 3:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & 1 \\ -1 & 3 \end{vmatrix} $$
+        </div>
+        <p>Это тот же определитель, что и в первой задаче.</p>
+        <p class="answer">Ответ: \( 4 \).</p>
+
+        <h3>Пример 4:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 2 & 5 \\ -4 & 9 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 2 \times 9 - 5 \times (-4) = 18 + 20 = 38 $$
+        </div>
+        <p class="answer">Ответ: \( 38 \).</p>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-square-root-alt icon"></i> Задача 2. Вычислить определители</h2>
+
+        <h3>Пример 1:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & 0 & -1 \\ 2 & 3 & 2 \\ -1 & 1 & 2 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 1 \times \begin{vmatrix} 3 & 2 \\ 1 & 2 \end{vmatrix} - 0 \times \begin{vmatrix} 2 & 2 \\ -1 & 2 \end{vmatrix} + (-1) \times \begin{vmatrix} 2 & 3 \\ -1 & 1 \end{vmatrix} $$
+            $$ = 1 \times (3 \times 2 - 2 \times 1) + (-1) \times (2 \times 1 - 3 \times (-1)) $$
+            $$ = 1 \times (6 - 2) + (-1) \times (2 + 3) = 1 \times 4 - 5 = 4 - 5 = -1 $$
+        </div>
+        <p class="answer">Ответ: \( -1 \).</p>
+
+        <h3>Пример 2:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & 2 & 3 \\ 3 & 2 & 2 \\ 1 & 1 & 2 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 1 \times \begin{vmatrix} 2 & 2 \\ 1 & 2 \end{vmatrix} - 2 \times \begin{vmatrix} 3 & 2 \\ 1 & 2 \end{vmatrix} + 3 \times \begin{vmatrix} 3 & 2 \\ 1 & 1 \end{vmatrix} $$
+            $$ = 1 \times (2 \times 2 - 2 \times 1) - 2 \times (3 \times 2 - 2 \times 1) + 3 \times (3 \times 1 - 2 \times 1) $$
+            $$ = 1 \times (4 - 2) - 2 \times (6 - 2) + 3 \times (3 - 2) $$
+            $$ = 1 \times 2 - 2 \times 4 + 3 \times 1 = 2 - 8 + 3 = -3 $$
+        </div>
+        <p class="answer">Ответ: \( -3 \).</p>
+
+        <h3>Пример 3:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 0 & 1 & 2 \\ 2 & -2 & 1 \\ 3 & 5 & 2 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ -1 \times (2 \times 2 - 1 \times 3) + 2 \times (2 \times 5 - (-2) \times 3) $$
+            $$ = -1 \times (4 - 3) + 2 \times (10 + 6) = -1 \times 1 + 2 \times 16 = -1 + 32 = 31 $$
+        </div>
+        <p class="answer">Ответ: \( 31 \).</p>
+
+        <h3>Пример 4:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 2 & 4 & 0 \\ -1 & 0 & 1 \\ -1 & 1 & -2 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 2 \times \begin{vmatrix} 0 & 1 \\ 1 & -2 \end{vmatrix} - 4 \times \begin{vmatrix} -1 & 1 \\ -1 & -2 \end{vmatrix} + 0 $$
+            $$ = 2 \times (0 \times (-2) - 1 \times 1) - 4 \times (-1 \times (-2) - 1 \times (-1)) $$
+            $$ = 2 \times (0 - 1) - 4 \times (2 - (-1)) = 2 \times (-1) - 4 \times 3 = -2 - 12 = -14 $$
+        </div>
+        <p class="answer">Ответ: \( -14 \).</p>
+
+        <h3>Пример 5:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} -1 & 1 & 0 \\ -3 & 2 & 2 \\ 2 & 0 & 3 \end{vmatrix} $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ -1 \times \begin{vmatrix} 2 & 2 \\ 0 & 3 \end{vmatrix} - 1 \times \begin{vmatrix} -3 & 2 \\ 2 & 3 \end{vmatrix} + 0 $$
+            $$ = -1 \times (2 \times 3 - 2 \times 0) - 1 \times (-3 \times 3 - 2 \times 2) $$
+            $$ = -1 \times (6 - 0) - 1 \times (-9 - 4) = -1 \times 6 - 1 \times (-13) = -6 + 13 = 7 $$
+        </div>
+        <p class="answer">Ответ: \( 7 \).</p>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-equals icon"></i> Задача 3. Решить уравнения</h2>
+
+        <h3>Пример 1:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} x & 1 & 2 \\ 2 & 1 & 1 \\ 3 & 2 & 1 \end{vmatrix} = 2 $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ \Delta = x \times \begin{vmatrix} 1 & 1 \\ 2 & 1 \end{vmatrix} - 1 \times \begin{vmatrix} 2 & 1 \\ 3 & 1 \end{vmatrix} + 2 \times \begin{vmatrix} 2 & 1 \\ 3 & 2 \end{vmatrix} $$
+            $$ = x \times (1 \times 1 - 1 \times 2) - 1 \times (2 \times 1 - 1 \times 3) + 2 \times (2 \times 2 - 1 \times 3) $$
+            $$ = x \times (1 - 2) - 1 \times (2 - 3) + 2 \times (4 - 3) = -x + 1 + 2 = -x + 3 $$
+        </div>
+        <p>Приравниваем к 2:</p>
+        <div class="math-equation">
+            $$ -x + 3 = 2 $$
+            $$ -x = 2 - 3 \implies -x = -1 \implies x = 1 $$
+        </div>
+        <p class="answer">Ответ: \( x = 1 \).</p>
+
+        <h3>Пример 2:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 2 & x \\ 1 & 3 \end{vmatrix} + \begin{vmatrix} 1 & -2 & 4 \\ 2 & 3 & 2 \\ 1 & x & 0 \end{vmatrix} = 5 $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ \begin{vmatrix} 2 & x \\ 1 & 3 \end{vmatrix} = 2 \times 3 - x \times 1 = 6 - x $$
+            $$ \begin{vmatrix} 1 & -2 & 4 \\ 2 & 3 & 2 \\ 1 & x & 0 \end{vmatrix} = 1 \times \begin{vmatrix} 3 & 2 \\ x & 0 \end{vmatrix} - (-2) \times \begin{vmatrix} 2 & 2 \\ 1 & 0 \end{vmatrix} + 4 \times \begin{vmatrix} 2 & 3 \\ 1 & x \end{vmatrix} $$
+            $$ = 1 \times (3 \times 0 - 2 \times x) + 2 \times (2 \times 0 - 2 \times 1) + 4 \times (2 \times x - 3 \times 1) $$
+            $$ = -2x - 4 + 8x - 12 = 6x - 16 $$
+            $$ 6 - x + 6x - 16 = 5 $$
+            $$ 5x - 10 = 5 \implies 5x = 15 \implies x = 3 $$
+        </div>
+        <p class="answer">Ответ: \( x = 3 \).</p>
+
+        <h3>Пример 3:</h3>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & x & -2 \\ 4 & -1 & x \\ 1 & -3 & 4 \end{vmatrix} + 2 \times \begin{vmatrix} x & x \\ 1 & 2 \end{vmatrix} = 0 $$
+        </div>
+        <p>Решение:</p>
+        <div class="math-equation">
+            $$ 1 \times \begin{vmatrix} -1 & x \\ -3 & 4 \end{vmatrix} - x \times \begin{vmatrix} 4 & x \\ 1 & 4 \end{vmatrix} + (-2) \times \begin{vmatrix} 4 & -1 \\ 1 & -3 \end{vmatrix} $$
+            $$ = 1 \times (-1 \times 4 - x \times (-3)) - x \times (4 \times 4 - x \times 1) + (-2) \times (4 \times (-3) - (-1) \times 1) $$
+            $$ = -4 + 3x - x(16 - x) - 2 \times (-11) $$
+            $$ = -4 + 3x - 16x + x^2 + 22 = x^2 - 13x + 18 $$
+            $$ 2 \times \begin{vmatrix} x & x \\ 1 & 2 \end{vmatrix} = 2 \times (x \times 2 - x \times 1) = 2 \times x $$
+            $$ x^2 - 13x + 18 + 2x = 0 \implies x^2 - 11x + 18 = 0 $$
+            $$ x = \frac{-(-11) \pm \sqrt{(-11)^2 - 4 \times 1 \times 18}}{2 \times 1} = \frac{11 \pm \sqrt{121 - 72}}{2} = \frac{11 \pm \sqrt{49}}{2} $$
+            $$ x = \frac{11 \pm 7}{2} $$
+            $$ x_1 = \frac{11 + 7}{2} = 9, \quad x_2 = \frac{11 - 7}{2} = 2 $$
+        </div>
+        <p class="answer">Ответ: \( x_1 = 9 \), \( x_2 = 2 \).</p>
+    </div>
+
+</div>
+
+</body>
+</html>
