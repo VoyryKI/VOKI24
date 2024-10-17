@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Решения задач по определителям</title>
+    <title>Конспект и задачи по определителям</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,10 +21,13 @@
 
         h1 {
             font-size: 2.5rem;
+            text-align: center;
         }
 
         h2 {
             font-size: 2rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
         }
 
         h3 {
@@ -73,6 +76,32 @@
             border-radius: 5px;
             margin-bottom: 20px;
         }
+
+        /* Button styling */
+        .toggle-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .toggle-buttons button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 
     <!-- Icons from Font Awesome -->
@@ -90,14 +119,100 @@
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+      function showSection(section) {
+        document.getElementById('solutions').classList.add('hidden');
+        document.getElementById('lecture-notes').classList.add('hidden');
+        document.getElementById(section).classList.remove('hidden');
+      }
+    </script>
 </head>
 <body>
 
 <div class="container">
-    <h1><i class="fas fa-calculator icon"></i> Решения задач по определителям</h1>
+    <h1><i class="fas fa-calculator icon"></i> Определители: Конспект и задачи</h1>
 
-    <div class="section">
-        <h2><i class="fas fa-square-root-alt icon"></i> Задача 1. Вычислить определители</h2>
+    <div class="toggle-buttons">
+        <button onclick="showSection('lecture-notes')">Конспект лекции</button>
+        <button onclick="showSection('solutions')">Домашнее задание</button>
+    </div>
+
+    <div id="lecture-notes" class="section">
+        <h2>Конспект: Определители второго и третьего порядка</h2>
+
+        <h3>Определитель второго порядка</h3>
+        <p><strong>Определение:</strong> Определителем второго порядка называется выражение, которое записывается в виде квадратной таблицы из четырех элементов. Формула для его вычисления:</p>
+        <div class="math-container">
+            $$ \Delta = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21} $$
+        </div>
+
+        <h3>Пример 1: Вычисление определителя</h3>
+        <p>1) $$ \Delta = \begin{vmatrix} 1 & 2 \\ 3 & 4 \end{vmatrix} = 1 \cdot 4 - 2 \cdot 3 = -2 $$</p>
+        <p>2) $$ \Delta = \begin{vmatrix} -2 & 4 \\ -3 & 5 \end{vmatrix} = -2 \cdot 5 - 4 \cdot (-3) = -10 + 12 = 2 $$</p>
+
+        <h3>Пример 2: Решение уравнения с определителем</h3>
+        <p>Дано уравнение:</p>
+        <div class="math-container">
+            $$ \begin{vmatrix} x & 2 \\ 3 & 1 \end{vmatrix} = 5 $$
+        </div>
+        <p>Решение: $$ x \cdot 1 - 2 \cdot 3 = x - 6 = 5, \quad x = 11 $$</p>
+
+        <h3>Определитель третьего порядка</h3>
+        <p><strong>Определение:</strong> Определитель третьего порядка записывается в виде таблицы из девяти элементов. Формула для его вычисления:</p>
+        <div class="math-container">
+            $$ \Delta = \begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix} $$ 
+            $$ = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} $$
+        </div>
+
+        <h3>Минор и алгебраическое дополнение</h3>
+        <p><strong>Определение:</strong> Минором \( M_{ij} \) элемента \( a_{ij} \) называется определитель второго порядка, который получается при вычеркивании строки и столбца, содержащих данный элемент.</p>
+        <p>Алгебраическим дополнением \( A_{ij} \) элемента \( a_{ij} \) называется минор \( M_{ij} \), умноженный на \( (-1)^{i+j} \):</p>
+        <div class="math-container">
+            $$ A_{ij} = (-1)^{i+j} M_{ij} $$
+        </div>
+
+        <h3>Пример 3: Нахождение минора и алгебраического дополнения</h3>
+        <p>Дан определитель:</p>
+        <div class="math-container">
+            $$ \begin{vmatrix} 2 & -2 & 1 \\ -3 & 1 & 2 \\ 1 & 3 & -5 \end{vmatrix} $$
+        </div>
+        <p>Найдем минор и алгебраическое дополнение для элемента \( a_{12} \). Вычеркиваем первую строку и второй столбец:</p>
+        <div class="math-container">
+            $$ M_{12} = \begin{vmatrix} -3 & 2 \\ 1 & -5 \end{vmatrix} = (-3) \cdot (-5) - 1 \cdot 2 = 15 - 2 = 13 $$ <br>
+            $$ A_{12} = (-1)^{1+2} \cdot 13 = -13 $$
+        </div>
+
+        <h3>Пример 4: Нахождение миноров и алгебраических дополнений</h3>
+        <p>Дан определитель:</p>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & -2 & 3 \\ 4 & 0 & 1 \\ 2 & -3 & -2 \end{vmatrix} $$
+        </div>
+        <p>Найдем миноры и алгебраические дополнения для элементов \( a_{13} \) и \( a_{21} \).</p>
+        <p>Минор \( M_{13} \): $$ M_{13} = \begin{vmatrix} 4 & 0 \\ 2 & -3 \end{vmatrix} = 4 \cdot (-3) - 0 = -12 $$</p>
+        <p>Минор \( M_{21} \): $$ M_{21} = \begin{vmatrix} -2 & 3 \\ -3 & -2 \end{vmatrix} = (-2) \cdot (-2) - 3 \cdot (-3) = 4 + 9 = 13 $$</p>
+        <p>Алгебраические дополнения:</p>
+        <div class="math-container">
+            $$ A_{13} = (-1)^{1+3} \cdot (-12) = -12; \quad A_{21} = (-1)^{2+1} \cdot 13 = -13 $$
+        </div>
+
+        <h3>Пример 5: Вычисление определителя</h3>
+        <p>1) Дан определитель:</p>
+        <div class="math-container">
+            $$ \begin{vmatrix} 1 & 2 & 1 \\ 5 & 4 & -1 \\ 3 & 2 & -4 \end{vmatrix} $$
+        </div>
+        <p>Разложим по первой строке:</p>
+        <div class="math-container">
+            $$ = 1 \cdot \begin{vmatrix} 4 & -1 \\ 2 & -4 \end{vmatrix} - 2 \cdot \begin{vmatrix} 5 & -1 \\ 3 & -4 \end{vmatrix} + 1 \cdot \begin{vmatrix} 5 & 4 \\ 3 & 2 \end{vmatrix} $$
+        </div>
+        <p>Вычисления дают результат: \( \Delta = 18 \).</p>
+
+    </div>
+
+    <div id="solutions" class="section hidden">
+        <h2>Домашнее задание: Решение задач</h2>
+
+        <h3>Задача 1: Вычислить определители</h3>
 
         <h3>Пример 1:</h3>
         <div class="math-container">
@@ -136,8 +251,7 @@
         </div>
         <p class="answer">Ответ: \( 38 \).</p>
     </div>
-
-    <div class="section">
+<div class="section">
         <h2><i class="fas fa-square-root-alt icon"></i> Задача 2. Вычислить определители</h2>
 
         <h3>Пример 1:</h3>
